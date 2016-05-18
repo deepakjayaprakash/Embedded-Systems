@@ -20,6 +20,15 @@ strt3			cmp r0,#10
 			b stop
 start2		adds r0,r0,#1			
 			b strt3
+		LDR	R0,=0X00000001
+			LDR	R1,=0Xf0000002
+strt31			cmp r1,#10
+			bmi start21
+			movs r0,#0
+			b stop
+start21		adds r0,r0,#1			
+			b strt31
+			
 			
 stop	      B	   stop		 		;stop program
 	          END      
